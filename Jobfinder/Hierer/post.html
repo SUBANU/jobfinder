@@ -1,0 +1,167 @@
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" href="main.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Qwigley"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  <style>
+    /*********** General CSS ***********/
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+   
+    #centered {
+      max-width: 300px;
+      margin: 50px auto 0;
+    }
+
+    h2 {
+      font-family: "Qwigley", cursive;
+      font-size: 7em;
+      color: #f3f4f6;
+      text-shadow: 1px 3px black;
+    }
+
+    input,
+    textarea {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      width: 100%;
+      margin: 8px 0;
+      text-indent: 1em;
+      padding: 10px 0;
+      border-radius: 3px;
+      border: 1px solid lightgray;
+    }
+
+    input[type="submit"] {
+      background-color: #4d90fe;
+      color: white;
+      border: 1px solid #3079ed;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #4d9aff;
+      color: white;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 0.75em;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:hover {
+      color: #4d9aff;
+    }
+
+    i {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class="bx bxl-c-plus-plus"></i>
+          <span class="logo_name">Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="active">
+              <i class="bx bx-grid-alt"></i>
+              <span class="links_name"> Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="cads/index.html">
+              <i class="bx bx-box"></i>
+              <span class="links_name">Company Details</span>
+            </a>
+          </li>
+          <li>
+            <a href="post.html">
+              <i class="bx bx-list-ul"></i>
+              <span class="links_name">Post a Job</span>
+            </a>
+          </li>
+          <li>
+            <a href="application.html">
+              <i class="bx bx-pie-chart-alt-2"></i>
+              <span class="links_name">Applications</span>
+            </a>
+          </li>
+  
+          <li class="log_out">
+            <a href="login.html">
+              <i class="bx bx-log-out"></i>
+              <span class="links_name">Log out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <section class="home-section">
+        <nav>
+          <div class="sidebar-button">
+            <i class="bx bx-menu sidebarBtn"></i>
+            <span class="dashboard">Hirer Dashboard</span>
+          </div>
+          <div class="search-box">
+            <input type="text" placeholder="Search..." />
+            <i class="bx bx-search"></i>
+          </div>
+          <div class="profile-details">
+            <img src="images/profile.jpg" alt="" />
+            <span class="admin_name">Naveen</span>
+            <i class="bx bx-chevron-down"></i>
+          </div>
+        </nav>
+<br>
+<br>  
+  <div id="centered">
+    <form action="apply.php" method="POST" name="form_for_treehouse_contest">
+      <h2 style="color: orange;">New Job</h2>
+      <input type="text" name="cname" placeholder="Company Name" /><br />
+      <input type="text" name="id" placeholder="id" /><br />
+      <input type="text" name="jname" placeholder="job name" /><br />
+      <input type="text" name="salary" placeholder="salary" /><br />
+      <input type="text" name="location" placeholder="location" /><br />
+      <input type="text" name="working_hrs" placeholder="working hrs" /><br />
+      <input type="text" name="description" placeholder="Job Description" /><br />
+      <input type="submit" value="Post" id="send" /><br />
+    </form>
+    <footer>
+      <a href="#"
+        ><i class="fa fa-twitter"></i
+      ></a>
+      <a href="#"><i class="fa fa-envelope"></i></a>
+    </footer>
+  </div>
+</body>

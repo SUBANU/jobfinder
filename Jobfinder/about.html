@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+  background-image: url('images/about.jpg');
+}
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create two equal columns that float next to each other */
+      .column-2 {
+        float: left;
+        width: 45%;
+        padding: 40px;
+        padding-left: 70px;
+        padding-right: 70px;
+        height: 475px;
+        margin: 30px;
+        margin-right: 30px;
+        margin-bottom: 70px;
+        background-color: #fede00;
+        line-height: 2;
+      }
+      . . .
+/* Large profile image */
+.large-profile {
+        background: url("../images/large-profile.jpeg");
+        background-size: cover;
+        background-position: center;
+      }
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+    </style>
+  </head>
+  <body>
+    . . .
+    <!--Section 2: About me-->
+
+    <div class="column-2">
+      <h1>About us</h1>
+      <p >
+        <img src="images/logo.jpg">
+        <br>
+
+        Hi! We are the admins of jobfinder.He we helps you to find the right job for you
+        and helps you to improve you life style.Post for job or apply a job as per your wish
+        Have a nice day!!!!!!!!.
+      </p>
+      <p>
+        Register now and njoy the benefits of our application.
+      </p>
+    </div>
+
+    <div class="column-2 large-profile">
+      <p>
+        <button type="button" onclick="loadDoc()">Get creators details</button>
+        <br><br>
+        <table id="demo"></table>
+        
+        
+      </p>
+    </div>
+      <form id="myForm">
+          <label>Name:</label>
+          <div><input type="text" name="name"></div>
+          <br>
+          <label>Comment:</label>
+          <div><textarea name="comment"></textarea></div>
+          <p><button type="button" onclick="postComment()">Post Comment</button></p>
+      </form>    
+      <div id="result">
+          <p>Content of the result DIV box will be replaced by the server response</p>
+      </div> 
+    <script>
+        function loadDoc() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("demo").innerHTML =
+              this.responseText;
+            }
+          };
+          xhttp.open("GET", "info.txt", true);
+          xhttp.send();
+        }
+        function postComment() {
+      // Creating the XMLHttpRequest object
+      var request = new XMLHttpRequest();
+      
+      // Instantiating the request object
+      request.open("POST", "confirmation.php");
+      
+      // Defining event listener for readystatechange event
+      request.onreadystatechange = function() {
+          // Check if the request is compete and was successful
+          if(this.readyState === 4 && this.status === 200) {
+              // Inserting the response from server into an HTML element
+              document.getElementById("result").innerHTML = this.responseText;
+          }
+      };
+      
+      // Retrieving the form data
+      var myForm = document.getElementById("myForm");
+      var formData = new FormData(myForm);
+  
+      // Sending the request to the server
+      request.send(formData);
+  }
+        </script>
+  </body>
+</html>
